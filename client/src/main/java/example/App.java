@@ -198,27 +198,6 @@ public class App extends Application {
         };
     }
 
-    /*private EventHandler<ActionEvent> findPatientEventHandler() {
-        return new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                String keywords = searchField.getText();
-                patients.getItems().clear();
-                visits.getItems().clear();
-                if (keywords.length() > 0) {
-                        String response = CoreRestClient.findPatients(keywords);
-                        Gson gson = GsonHelper.getGsonWithParserLocalDate();
-                        PatientDTO[] patients = gson.fromJson(response, PatientDTO[].class);
-                        Arrays.stream(patients).sorted((o1, o2) -> o1.getId().compareTo(o2.getId())).forEach(patientDTO -> {
-                            addPatient(patientDTO);
-                        });
-                } else {
-                    getAllPatientFromCore();
-                }
-            }
-        };
-    }*/
-
     private void searchPatient(String keywords) {
         patients.getItems().clear();
         visits.getItems().clear();
